@@ -1,0 +1,61 @@
+# --- RODE specific parameters ---
+
+# use epsilon greedy action/role selector
+action_selector: "soft_epsilon_greedy"
+action_encoder: "obs_reward"
+epsilon_start: 1.0
+epsilon_finish: 0.05
+role_epsilon_finish: 0.05
+epsilon_anneal_time: 70000
+epsilon_anneal_time_exp: 50000
+
+runner: "meta"
+batch_size_run: 8
+
+buffer_size: 5000
+
+# update the target network every {} episodes
+target_update_interval: 200
+
+# use the Q_Learner to train
+agent_output_type: "q"
+learner: "hierarchical_rode_learner"
+double_q: True
+mixer: "hqmix"
+role_mixer: "hqmix"
+mixing_embed_dim: 32
+hypernet_layers: 2
+hypernet_embed: 64
+
+name: "hierarchical_rode"
+mac: "hierarchical_rode_mac"
+agent: "hierarchical_rode"
+role: 'dot'
+role_selector: 'dot'
+bi_opt: False
+
+var_floor: 0.002
+n_role_clusters: 5
+role_interval: 5
+state_latent_dim: 32
+action_latent_dim: 20
+role_action_spaces_update_start: 50000
+latent_dim: 3
+use_tensorboard: True
+save_model: True
+use_cuda: True
+device_num: 0
+save_replay: False
+meta_lr: 0.00005
+use_step_reward: True
+concat_ori_s: True
+hie_grad_qtot: True
+use_roma: False
+NN_HIDDEN_SIZE: 32
+meta_h: True
+meta_h_interval: 1000
+meta_role: True
+
+# for interpretability
+verbose: False
+
