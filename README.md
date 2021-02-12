@@ -17,13 +17,13 @@ export CUDA_VISIBLE_DEVICES="0" && python3 src/main.py --config=qmix_smac_hierar
 
 To run one layer MNMPG with [RODE](https://github.com/TonghanWang/RODE) utility network, run:
 
-```
+```shell
 export CUDA_VISIBLE_DEVICES="0" && python3 src/main.py --config=hierarchical_rode --env-config=sc2 with env_args.map_name=corridor t_max=5050000 meta_role=False
 ```
 
 To run two-layer MNMPG with RODE utility network, run:
 
-```
+```shell
 export CUDA_VISIBLE_DEVICES="0" && python3 src/main.py --config=hierarchical_rode --env-config=sc2 with env_args.map_name=corridor t_max=5050000
 ```
 
